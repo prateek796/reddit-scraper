@@ -1,0 +1,3 @@
+use playwright latest version with javascript.
+Add relevant comments. 
+this is an assignment for job interview. 
