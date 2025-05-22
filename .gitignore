@@ -1,17 +1,10 @@
 # Dependencies
 node_modules/
-package-lock.json
 
 # Playwright
 test-results/
 playwright-report/
 playwright/.cache/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
 
 # OS
 .DS_Store

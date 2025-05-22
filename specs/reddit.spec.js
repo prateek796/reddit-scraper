@@ -9,8 +9,6 @@ const POST_RANGE = {
 
 /**
  * Validates the scraped results and logs post details
- * @param {Array} results - 
- * @returns {boolean} 
  */
 function validateResults(results) {
   // Verify we have exactly 6 results (posts 40-45)
@@ -44,8 +42,6 @@ function validateResults(results) {
 
 /**
  * Gets the title of the first post on the page
- * @param {Page} page - Playwright page object
- * @returns {Promise<string>} - Title of the first post
  */
 async function getFirstPostTitle(page) {
   const firstPost = await page.$('shreddit-post');
@@ -55,9 +51,6 @@ async function getFirstPostTitle(page) {
 /**
  * Scrolls up to find the original first post
  * Uses a two-step approach: direct scroll to top, then incremental scrolling if needed
- * @param {Page} page - Playwright page object
- * @param {string} targetFirstPostTitle - Title of the original first post to find
- * @returns {Promise<boolean>} - True if post found, false otherwise
  */
 async function scrollUpToFindFirstPost(page, targetFirstPostTitle) {
   // First try to scroll directly to top for efficiency
@@ -98,8 +91,6 @@ async function scrollUpToFindFirstPost(page, targetFirstPostTitle) {
  * Loads required number of posts using efficient scrolling strategy
  * Uses a two-step approach: scroll to 80% then 95% of page height
  * Falls back to incremental scrolling if needed
- * @param {Page} page - Playwright page object
- * @returns {Promise<number>} - Total number of posts loaded
  */
 async function loadRequiredPosts(page) {
   let currentPostCount = 0;
@@ -167,8 +158,6 @@ async function loadRequiredPosts(page) {
 
 /**
  * Extracts the content of the first comment on a post
- * @param {Page} page - Playwright page object
- * @returns {Promise<string>} - Comment content or default message
  */
 async function getCommentContent(page) {
   try {
